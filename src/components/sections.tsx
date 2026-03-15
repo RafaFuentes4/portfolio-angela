@@ -117,12 +117,12 @@ const milestones = [
 ];
 
 const skills = [
-  { name: "Coordinación de eventos (20+)", level: 95 },
-  { name: "Gestión de grupos infantiles (100+ niños)", level: 95 },
-  { name: "Comunicación en público y dinámicas", level: 95 },
-  { name: "Scratch y Lego WeDo 2.0", level: 90 },
-  { name: "Video Editing y Audio Mixing", level: 80 },
-  { name: "Python, C++, C, Arduino", level: 75 },
+  { name: "Coordinación de eventos (20+)", icon: "📅" },
+  { name: "Gestión de grupos infantiles (100+ niños)", icon: "👧" },
+  { name: "Comunicación en público y dinámicas", icon: "🎤" },
+  { name: "Scratch y Lego WeDo 2.0", icon: "🧩" },
+  { name: "Video Editing y Audio Mixing", icon: "🎬" },
+  { name: "Python, C++, C, Arduino", icon: "💻" },
 ];
 
 /* ─── Hero ─── */
@@ -381,20 +381,16 @@ export function Skills() {
         Combinación única de competencias técnicas y humanas
       </p>
 
-      <div className="space-y-5">
+      <div className="flex flex-wrap justify-center gap-3">
         {skills.map((skill) => (
-          <div key={skill.name}>
-            <div className="mb-1.5">
-              <span className="text-sm font-semibold text-gray-700">
-                {skill.name}
-              </span>
-            </div>
-            <div className="h-2 overflow-hidden rounded-full bg-gray-100">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-1000"
-                style={{ width: `${skill.level}%` }}
-              />
-            </div>
+          <div
+            key={skill.name}
+            className="flex items-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-4 py-2.5"
+          >
+            <span className="text-lg">{skill.icon}</span>
+            <span className="text-sm font-semibold text-gray-700">
+              {skill.name}
+            </span>
           </div>
         ))}
       </div>
